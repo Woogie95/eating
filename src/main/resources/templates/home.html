@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>메뉴 추천</title>
+</head>
+<body>
+<h1 class="title">오늘 뭐 먹을래??</h1>
+
+<div class="categories">
+    <div class="categories_1">
+        <p>전체</p>
+        <p>한식</p>
+        <p>중식</p>
+        <p>일식</p>
+        <p>양식</p>
+        <p>기타</p>
+    </div>
+
+    <label for="myTextbox"></label>
+    <textarea id="myTextbox" class="textbox" readonly rows="5" cols="40" style="resize: none"></textarea>
+
+    <button style="background-color: #d2f2fc; color: rgb(128,128,128); border: 3px solid rgb(128,128,128); padding: 30px 20px;
+     text-align: center; text-decoration: none; display: inline-block; font-size: 20px; margin: 20px 20px;
+      cursor: pointer; border-radius: 10px / 10px; font-weight: bold"
+            onmouseover="this.style.backgroundColor='rgba(45,90,238,0.93)'; this.style.borderColor='2px solid #2D03E7ED'"
+            onmouseout="this.style.backgroundColor='#d2f2fc'; this.style.borderColor='2px solid #000'">
+        메뉴 추천!
+    </button>
+</div>
+
+</body>
+
+<style>
+    body {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: #d2f2fc;
+    }
+
+    h1.title {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0;
+        padding: 1rem 2rem;
+        border-top: 3px solid gray;
+        border-bottom: 3px solid gray;
+        border-left: 10px solid gray;
+        border-right: 10px solid gray;
+        border-radius: 10px / 10px;
+    }
+
+    .categories {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .categories .categories_1 {
+        display: flex;
+        gap: 30px;
+        padding: 1rem 2rem;
+        border-top: 3px solid gray;
+        border-bottom: 3px solid gray;
+        border-left: 10px solid gray;
+        border-right: 10px solid gray;
+        border-radius: 10px / 10px;
+    }
+
+    .categories .categories_1 {
+        margin-top: 30px;
+        display: flex;
+        gap: 60px;
+        border-radius: 10px / 10px;
+    }
+
+
+    .categories_1 p {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 0;
+        border: 2px solid gray;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: gray;
+        cursor: pointer;
+    }
+
+
+    .categories_1 p:hover,
+    .categories_1 p:active,
+    .categories_1 p:focus {
+        background-color: #c0c0c0;
+    }
+
+    .categories_1 p.active {
+        background-color: #c0c0c0;
+    }
+
+    .textbox{
+        margin-top: 30px;
+        border-radius: 10px / 10px;
+        border-top: 3px solid gray;
+        border-bottom: 3px solid gray;
+        border-left: 10px solid gray;
+        border-right: 10px solid gray;
+    }
+
+
+</style>
+
+<script>
+    // 요소 가져오기
+    const categoryElements1 = document.querySelectorAll('.categories_1 p');
+
+    categoryElements1.forEach(element => {
+        element.addEventListener('click', () => {
+            categoryElements1.forEach(element => element.classList.remove('active'));
+            element.classList.add('active');
+            const category = element.textContent;
+            localStorage.setItem('category', category);
+        });
+
+        const storedCategory = localStorage.getItem('category');
+        if (storedCategory === element.textContent) {
+            element.classList.add('active');
+        }
+    });
+
+</script>
+
+</html>
