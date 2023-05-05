@@ -129,6 +129,21 @@
         }
     });
 
+    const menuRecommendationButton = document.querySelector('button');
+
+    menuRecommendationButton.addEventListener('click', () => {
+        const activeCategoryElement = document.querySelector('.categories_1 p.active');
+        const activeCategory = activeCategoryElement.textContent;
+
+        fetch(`/menu/${activeCategory}`)
+            .then(response => response.json())
+            .then(menu => {
+                const menuRecommendationTextarea = document.querySelector('#myTextbox');
+                menuRecommendationTextarea.value = menu.name;
+            })
+            .catch(error => console.error(error));
+    });
+
 </script>
 
 </html>
