@@ -1,4 +1,4 @@
 package com.example.eating.entity;
 
-public class FoodEntity {
+public class FoodItemEntity {
 }
