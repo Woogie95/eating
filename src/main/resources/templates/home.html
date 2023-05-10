@@ -1,33 +1,33 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>메뉴 추천</title>
-</head>
-<body>
-<h1 class="title">오늘 뭐 먹을래??</h1>
-<div class="categories_1">
-    <form>
-        <p id="1" class="category-button" th:classappend="${category == '1'} ? 'active' : ''">한식</p>
-        <p id="2" class="category-button" th:classappend="${category == '2'} ? 'active' : ''">중식</p>
-        <p id="3" class="category-button" th:classappend="${category == '3'} ? 'active' : ''">일식</p>
-        <p id="4" class="category-button" th:classappend="${category == '4'} ? 'active' : ''">양식</p>
-        <p id="5" class="category-button" th:classappend="${category == '5'} ? 'active' : ''">기타</p>
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>메뉴 추천</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1 class="title">오늘 뭐 먹을래??</h1>-->
+<!--<div class="categories_1">-->
+<!--    <form>-->
+<!--        <p id="1" class="category-button" th:classappend="${category == '1'} ? 'active' : ''">한식</p>-->
+<!--        <p id="2" class="category-button" th:classappend="${category == '2'} ? 'active' : ''">중식</p>-->
+<!--        <p id="3" class="category-button" th:classappend="${category == '3'} ? 'active' : ''">일식</p>-->
+<!--        <p id="4" class="category-button" th:classappend="${category == '4'} ? 'active' : ''">양식</p>-->
+<!--        <p id="5" class="category-button" th:classappend="${category == '5'} ? 'active' : ''">기타</p>-->
 
-        <label for="myTextbox"></label>
-        <textarea id="myTextbox" class="textbox" readonly rows="5" cols="40" style="resize: none"></textarea>
+<!--        <label for="myTextbox"></label>-->
+<!--        <textarea id="myTextbox" class="textbox" readonly rows="5" cols="40" style="resize: none"></textarea>-->
 
-        <button type="submit" id="recommend-button" style="background-color: #d2f2fc; color: rgb(128,128,128); border: 3px solid rgb(128,128,128); padding: 30px 20px;
-     text-align: center; text-decoration: none; display: inline-block; font-size: 20px; margin: 20px 20px;
-      cursor: pointer; border-radius: 10px / 10px; font-weight: bold"
-                onmouseover="this.style.backgroundColor='rgba(45,90,238,0.93)'; this.style.borderColor='2px solid #2D03E7ED'"
-                onmouseout="this.style.backgroundColor='#d2f2fc'; this.style.borderColor='2px solid #000'">
-            메뉴 추천!
-        </button>
-    </form>
-</div>
+<!--        <button type="submit" id="recommend-button" style="background-color: #d2f2fc; color: rgb(128,128,128); border: 3px solid rgb(128,128,128); padding: 30px 20px;-->
+<!--     text-align: center; text-decoration: none; display: inline-block; font-size: 20px; margin: 20px 20px;-->
+<!--      cursor: pointer; border-radius: 10px / 10px; font-weight: bold"-->
+<!--                onmouseover="this.style.backgroundColor='rgba(45,90,238,0.93)'; this.style.borderColor='2px solid #2D03E7ED'"-->
+<!--                onmouseout="this.style.backgroundColor='#d2f2fc'; this.style.borderColor='2px solid #000'">-->
+<!--            메뉴 추천!-->
+<!--        </button>-->
+<!--    </form>-->
+<!--</div>-->
 
-</body>
+<!--</body>-->
 
 <!--<style>-->
 <!--    body {-->

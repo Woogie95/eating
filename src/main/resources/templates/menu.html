@@ -1,0 +1,112 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>메뉴 추천</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1 class="title">오늘 뭐 먹을래??</h1>-->
+
+<!--<button type="button" class="btn-ko" onclick="sendGetRequest()">한식</button>-->
+<!--<button type="button" class="btn-chi" onclick="selectCategory('chinese')">중식</button>-->
+<!--<button type="button" class="btn-ja" onclick="selectCategory('japanese')">일식</button>-->
+<!--<button type="button" class="btn-we" onclick="selectCategory('western')">양식</button>-->
+<!--<button type="button" class="btn-etc" onclick="selectCategory('etc')">기타</button>-->
+
+<!--<button type="button" class="btn-ko" onclick="sendGetRequest()">한식</button>-->
+<!--<p id="result"></p>-->
+<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+<!--<script>-->
+<!--    function sendGetRequest() {-->
+<!--        $.ajax({-->
+<!--            url: '/korean/1',-->
+<!--            type: 'GET',-->
+<!--            dataType: 'json',-->
+<!--            success: function(data) {-->
+<!--                $('#result').text(data.name);-->
+<!--            },-->
+<!--            error: function() {-->
+<!--                alert('Failed to get random menu.');-->
+<!--            }-->
+<!--        });-->
+<!--    }-->
+<!--</script>-->
+
+<!--</body>-->
+<!--<script>-->
+
+<!--    <button type="button" id="get-random-menu">Get Random Menu</button>-->
+<!--    <p id="result"></p>-->
+<!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+<!--<script>-->
+
+<!--    <button type="button" id="get-random-menu">Get Random Menu</button>-->
+<!--    <p id="result"></p>-->
+<!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+<!--<script>-->
+<!--    $(document).ready(function() {-->
+<!--        $('#get-random-menu').on('click', function() {-->
+<!--            $.ajax({-->
+<!--                url: '/korean/1', // {id} 값은 원하는 값으로 수정하세요.-->
+<!--                type: 'GET',-->
+<!--                dataType: 'json',-->
+<!--                success: function(data) {-->
+<!--                    $('#result').text(data.name);-->
+<!--                },-->
+<!--                error: function() {-->
+<!--                    alert('Failed to get random menu.');-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    });-->
+
+<!--    $(document).ready(function() {-->
+<!--        $('#get-random-menu').on('click', function() {-->
+<!--            $.ajax({-->
+<!--                url: '/korean/1', // {id} 값은 원하는 값으로 수정하세요.-->
+<!--                type: 'GET',-->
+<!--                dataType: 'json',-->
+<!--                success: function(data) {-->
+<!--                    $('#result').text(data.name);-->
+<!--                },-->
+<!--                error: function() {-->
+<!--                    alert('Failed to get random menu.');-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    });-->
+
+
+
+
+<!--    function selectCategory(category) {-->
+<!--        var form = document.createElement('form');-->
+<!--        form.action = '/menu/category/' + category;-->
+<!--        form.method = 'GET';-->
+
+<!--        var hiddenField = document.createElement('input');-->
+<!--        hiddenField.type = 'hidden';-->
+<!--        hiddenField.name = 'category';-->
+<!--        hiddenField.value = category;-->
+
+<!--        form.appendChild(hiddenField);-->
+<!--        document.body.appendChild(form);-->
+<!--        form.submit();-->
+<!--    }-->
+<!--    function sendGetRequest() {-->
+<!--        const xhr = new XMLHttpRequest();-->
+<!--        xhr.onreadystatechange = function() {-->
+<!--            if (xhr.readyState === XMLHttpRequest.DONE) {-->
+<!--                if (xhr.status === 200) {-->
+<!--                    console.log(xhr.responseText);-->
+<!--                } else {-->
+<!--                    console.error('Request failed');-->
+<!--                }-->
+<!--            }-->
+<!--        }-->
+<!--        xhr.open('GET', '/korean?id=1');-->
+<!--        xhr.send();-->
+<!--    }-->
+<!--</script>-->
+
+<!--</html>-->

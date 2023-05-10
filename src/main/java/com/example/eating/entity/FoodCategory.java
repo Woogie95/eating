@@ -1,6 +1,7 @@
 package com.example.eating.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 
 import java.util.List;
@@ -16,7 +17,9 @@ public class FoodCategory {
 
     private String name;
 
-    @OneToMany(mappedBy = "category")
+    @Builder.Default
+    @OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
     private List<Food> foods;
+
 
 }
