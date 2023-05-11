@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<form style="margin-top : 20px; margin-left: 5%">
+    <div class="btn-group btn-group-lg d-block" style="width:auto; margin : auto;" role="group"
+         aria-label="Large button group">
+        <button id="koreanBtn" type="button" class="btn btn-outline-primary">한식</button>
+        <button id="chineseBtn" type="button" class="btn btn-outline-primary">중식</button>
+        <button id="japaneseBtn" type="button" class="btn btn-outline-primary">일식</button>
+        <button id="westernBtn" type="button" class="btn btn-outline-primary">양식</button>
+        <button id="etcBtn" type="button" class="btn btn-outline-primary">기타</button>
+    </div>
+
+    <textarea id="myTextbox" class="textbox" readonly rows="5" cols="40"
+              style="margin-top: 20px; resize: none"></textarea>
+</form>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    function sendFoodRequest(id) {
+        $.ajax({
+            url: "/food/" + id,
+            type: "GET",
+            success: function (response) {
+                $("#myTextbox").text(response.name); // assuming the response is a Food object with a name field
+            },
+            error: function (xhr, status, error) {
+                console.log(error);
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
