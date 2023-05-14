@@ -11,27 +11,32 @@
 <form style="margin-top: 20px; margin-left: 5%">
     <div class="btn-group btn-group-lg d-block" style="width: auto; margin: auto;" role="group"
          aria-label="Large button group">
-        <button id="koreanBtn" type="button" class="btn btn-outline-primary">한식</button>
-        <button id="chineseBtn" type="button" class="btn btn-outline-primary">중식</button>
-        <button id="japaneseBtn" type="button" class="btn btn-outline-primary">일식</button>
-        <button id="westernBtn" type="button" class="btn btn-outline-primary">양식</button>
-        <button id="etcBtn" type="button" class="btn btn-outline-primary">기타</button>
+        <button onclick="getUser(1)" id="koreanBtn" type="button" class="btn btn-outline-primary">한식</button>
+        <button onclick="getUser(2)" id="chineseBtn" type="button" class="btn btn-outline-primary">중식</button>
+        <button onclick="getUser(3)" id="japaneseBtn" type="button" class="btn btn-outline-primary">일식</button>
+        <button onclick="getUser(4)" id="westernBtn" type="button" class="btn btn-outline-primary">양식</button>
+        <button onclick="getUser(5)" id="etcBtn" type="button" class="btn btn-outline-primary">기타</button>
     </div>
 
-    <textarea id="myTextbox" class="textbox" readonly rows="5" cols="40"
-              style="margin-top: 20px; resize: none"></textarea>
+    <label for="myTextbox"></label><textarea id="myTextbox" class="textbox" readonly rows="5" cols="40"
+                                             style="margin-top: 20px; resize: none"></textarea>
 </form>
+</body>
 
 <script>
-    $(document).ready(function () {
-        $("button").click(function () {
-            var id = $(this).attr('id');
-            $.get("/food/" + id, function (data) {
-                $("#myTextbox").val(data.name);
-            });
-        });
-    });
+    function getUser(id) {
+        const config = {
+            method: "get"
+        };
+
+        fetch(`/${id}`, config)
+            .then(response => response.text())
+            .then(data => {
+                $("#myTextbox").val(data);
+            })
+            .catch(error => console.log(error));
+    }
+
 </script>
 
-</body>
 </html>

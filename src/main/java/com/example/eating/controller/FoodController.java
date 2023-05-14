@@ -15,21 +15,16 @@ public class FoodController {
     private final FoodService foodService;
 
     @GetMapping("/")
-    public String board(Model model) {
-        model.addAttribute("list", boardService.boardList());
+    public String showMenu() {
         return "select";
     }
 
-    @PostMapping("/board/writer")
-    public String writerBoard(Board board) {
-        boardService.write(board);
-        return "redirect:/board";
-    }
-
-
-    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Food getRandomMenu(@PathVariable Long id) {
-        return foodService.findCategoryId(id);
+    @GetMapping("/{id}")
+    @ResponseBody
+    public String getRandomMenu(@PathVariable Long id) {
+        Food categoryId = foodService.findCategoryId(id);
+        System.out.println(categoryId.getName());
+        return categoryId.getName();
     }
 
 }
