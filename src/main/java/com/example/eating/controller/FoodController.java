@@ -23,7 +23,6 @@ public class FoodController {
     @ResponseBody
     public String getRandomMenu(@PathVariable Long id) {
         Food categoryId = foodService.findCategoryId(id);
-        System.out.println(categoryId.getName());
         return categoryId.getName();
     }
 
